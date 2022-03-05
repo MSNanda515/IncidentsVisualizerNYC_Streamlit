@@ -16,7 +16,16 @@ def load_data(nrows):
     data.dropna(subset=['LATITUDE', 'LONGITUDE'], inplace=True)
     lowercase = lambda x : str(x).lower()
     data.rename(lowercase, axis='columns', inplace=True)
-    data.rename(columns={'crash_data_crash_time': 'data/time'}, inplace=True)
-    return DATA_URL
+    data.rename(columns={'crash_date_crash_time': 'date/time'}, inplace=True)
+    return data
 
 data = load_data(100000)
+
+st.header("Where are the most people injured in NYC?")
+injured_people = st.slider("Number of people injured in vehicle collisions", 0, 19)
+st.map(data.query("injured_persons >= @injured_people")[["latitude", "longitude"]].dropna(how="any")) 
+
+
+if st.checkbox("Show Raw Data", False):
+    st.subheader("Raw Data")
+    st.write(data)
