@@ -19,9 +19,16 @@ The application is built using the following technologies:
 * plotly express for the interactive histogram
 
 ## Running instructions:
-Install the python packages used and streamlit as a CLI command. Then execute the following command in the terminal
+Install the python packages and then start the server using the following commands.
 ```sh
+pip3 install -r requirements.txt
 streamlit run app.py
 ```
 
 The app opens on port 8501 by default. You can change this by passing another cli argument.
+
+
+A demo of the application can be found at the following link:
+
+[Incident Visualizer](https://incident-visualizer-streamlit.herokuapp.com/)
+

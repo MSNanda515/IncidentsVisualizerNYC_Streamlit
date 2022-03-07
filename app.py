@@ -10,7 +10,7 @@ DATA_URL = (
 
 st.title("Motor Vehicle Collisions in New York City")
 st.markdown("This application is a Streamline dashboard that can be used" +
-"to analyze motor vehicle collisions in NYC 🗽💥🚙")
+" to analyze motor vehicle collisions in NYC 🗽💥🚙")
 
 @st.cache(persist=True)
 def load_data(nrows):
@@ -79,3 +79,4 @@ else:
 if st.checkbox("Show Raw Data", False):
     st.subheader("Raw Data")
     st.write(data)
+
